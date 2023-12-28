@@ -1,16 +1,26 @@
 digraph "ContextMapGraph" {
 graph ["imagepath"="/tmp/GraphvizJava"]
-"atencionCliente" ["margin"="0.3","orientation"="143","shape"="egg","fontsize"="16","style"="bold","label"="atencionCliente\n","fontname"="sans-serif"]
-"devoluciones" ["margin"="0.3","orientation"="27","shape"="egg","fontsize"="16","style"="bold","label"="devoluciones\n","fontname"="sans-serif"]
-"login" ["margin"="0.3","orientation"="304","shape"="egg","fontsize"="16","style"="bold","label"="login\n","fontname"="sans-serif"]
-"ventas" ["margin"="0.3","orientation"="346","shape"="egg","fontsize"="16","style"="bold","label"="ventas\n","fontname"="sans-serif"]
-"logistica" ["margin"="0.3","orientation"="52","shape"="egg","fontsize"="16","style"="bold","label"="logistica\n","fontname"="sans-serif"]
+"atencionCliente" ["margin"="0.3","orientation"="58","shape"="egg","fontsize"="16","style"="bold","label"="atencionCliente\n","fontname"="sans-serif"]
+"compras" ["margin"="0.3","orientation"="48","shape"="egg","fontsize"="16","style"="bold","label"="compras\n","fontname"="sans-serif"]
+"login" ["margin"="0.3","orientation"="140","shape"="egg","fontsize"="16","style"="bold","label"="login\n","fontname"="sans-serif"]
+"ventas" ["margin"="0.3","orientation"="287","shape"="egg","fontsize"="16","style"="bold","label"="ventas\n","fontname"="sans-serif"]
+"devoluciones" ["margin"="0.3","orientation"="243","shape"="egg","fontsize"="16","style"="bold","label"="devoluciones\n","fontname"="sans-serif"]
+"compras" -> "login" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
 "login" -> "ventas" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">D</td></tr>
 </table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">U</td></tr>
 </table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
 "ventas" -> "atencionCliente" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"devoluciones" -> "ventas" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
 <tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
 </table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">U</td></tr>
