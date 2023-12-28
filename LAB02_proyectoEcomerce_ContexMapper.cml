@@ -2,14 +2,16 @@ BoundedContext login
 BoundedContext ventas
 BoundedContext devoluciones
 BoundedContext atencionCliente
-BoundedContext logistica
+BoundedContext compras
 
 
 ContextMap ComercioElectronico{
 
-  contains login,ventas,devoluciones,atencionCliente,logistica
+  contains login,ventas,devoluciones,atencionCliente,compras
 
 login -> ventas
 ventas [U]-> [D,ACL] atencionCliente
 devoluciones[U]-> [D,ACL]ventas
+compras ->login
+
 }
