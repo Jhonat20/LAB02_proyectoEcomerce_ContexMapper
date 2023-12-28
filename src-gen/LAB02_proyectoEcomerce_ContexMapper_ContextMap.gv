@@ -1,10 +1,10 @@
 digraph "ContextMapGraph" {
 graph ["imagepath"="/tmp/GraphvizJava"]
-"atencionCliente" ["margin"="0.3","orientation"="279","shape"="egg","fontsize"="16","style"="bold","label"="atencionCliente\n","fontname"="sans-serif"]
-"devoluciones" ["margin"="0.3","orientation"="266","shape"="egg","fontsize"="16","style"="bold","label"="devoluciones\n","fontname"="sans-serif"]
-"login" ["margin"="0.3","orientation"="51","shape"="egg","fontsize"="16","style"="bold","label"="login\n","fontname"="sans-serif"]
-"ventas" ["margin"="0.3","orientation"="241","shape"="egg","fontsize"="16","style"="bold","label"="ventas\n","fontname"="sans-serif"]
-"logistica" ["margin"="0.3","orientation"="32","shape"="egg","fontsize"="16","style"="bold","label"="logistica\n","fontname"="sans-serif"]
+"atencionCliente" ["margin"="0.3","orientation"="143","shape"="egg","fontsize"="16","style"="bold","label"="atencionCliente\n","fontname"="sans-serif"]
+"devoluciones" ["margin"="0.3","orientation"="27","shape"="egg","fontsize"="16","style"="bold","label"="devoluciones\n","fontname"="sans-serif"]
+"login" ["margin"="0.3","orientation"="304","shape"="egg","fontsize"="16","style"="bold","label"="login\n","fontname"="sans-serif"]
+"ventas" ["margin"="0.3","orientation"="346","shape"="egg","fontsize"="16","style"="bold","label"="ventas\n","fontname"="sans-serif"]
+"logistica" ["margin"="0.3","orientation"="52","shape"="egg","fontsize"="16","style"="bold","label"="logistica\n","fontname"="sans-serif"]
 "login" -> "ventas" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">D</td></tr>
 </table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
