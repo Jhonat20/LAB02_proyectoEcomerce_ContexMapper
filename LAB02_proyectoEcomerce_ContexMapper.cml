@@ -1,2 +1,5 @@
 BoundedContext login
 BoundedContext ventas
+BoundedContext devoluciones
+BoundedContext atencionCliente
+BoundedContext logistica
