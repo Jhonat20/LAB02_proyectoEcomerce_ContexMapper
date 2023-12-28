@@ -11,5 +11,5 @@ ContextMap ComercioElectronico{
 
 login -> ventas
 ventas [U]-> [D,ACL] atencionCliente
-
+devoluciones[U]-> [D,ACL]ventas
 }
