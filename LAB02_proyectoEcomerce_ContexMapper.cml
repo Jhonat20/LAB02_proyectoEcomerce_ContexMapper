@@ -10,6 +10,6 @@ ContextMap ComercioElectronico{
   contains login,ventas,devoluciones,atencionCliente,logistica
 
 login -> ventas
-
+ventas [U]-> [D,ACL] atencionCliente
 
 }
