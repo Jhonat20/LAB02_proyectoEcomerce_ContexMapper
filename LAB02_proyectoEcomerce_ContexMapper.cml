@@ -1,0 +1,55 @@
+ContextMap TiendaEnLineaMapaContexto {
+	type SYSTEM_LANDSCAPE
+	state TO_BE
+	contains CarritoComprasContext
+}
+Domain ComercioElectronico {
+  domainVisionStatement "Dominio principal que abarca todas las funcionalidades y procesos del sistema de comercio electrónico."
+
+Subdomain CarritoCompras {
+    type CORE_DOMAIN
+    domainVisionStatement "Este subdominio gestiona el procesamiento de pagos, incluyendo la integración con pasarelas de pago y la confirmación de transacciones."
+  }
+
+}
+BoundedContext CarritoComprasContext implements CarritoCompras {
+  type FEATURE
+  domainVisionStatement "Gestiona el carrito de compras, incluyendo la gestión de productos, cantidades y transacciones de compra."
+
+  Aggregate Carrito {
+    Entity ItemCarrito {
+      aggregateRoot
+      String itemId
+      String productoId
+      Integer cantidad
+      Double precioUnitario
+    }
+    
+    Entity Cliente {
+      String clienteId
+      String nombre
+      String direccion
+      // Otros detalles del cliente
+    }
+  }
+
+  Aggregate TransaccionesCompra {
+    Entity OrdenCompra {
+      aggregateRoot
+      String ordenId
+      String clienteId
+      Date fechaOrden
+      Double total
+      String estado
+    }
+
+    Entity DetalleOrden {
+      String detalleId
+      String ordenId
+      String itemId
+      Integer cantidad
+      Double precioUnitario
+      // Otros detalles del artículo en la orden
+    }
+  }
+}
