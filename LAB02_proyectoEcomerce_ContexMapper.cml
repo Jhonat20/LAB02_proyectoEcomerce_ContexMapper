@@ -29,7 +29,6 @@ BoundedContext CarritoComprasContext implements CarritoCompras {
       String clienteId
       String nombre
       String direccion
-      // Otros detalles del cliente
     }
   }
 
@@ -49,7 +48,6 @@ BoundedContext CarritoComprasContext implements CarritoCompras {
       String itemId
       Integer cantidad
       Double precioUnitario
-      // Otros detalles del artículo en la orden
     }
   }
 }
