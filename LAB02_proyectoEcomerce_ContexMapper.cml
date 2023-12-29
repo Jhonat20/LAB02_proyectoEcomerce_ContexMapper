@@ -1,19 +1,28 @@
-BoundedContext login
-BoundedContext ventas
-BoundedContext devoluciones
-BoundedContext atencionCliente
-BoundedContext compras
+ContextMap TiendaEnLineaMapaContexto {
+	type SYSTEM_LANDSCAPE
+	state TO_BE
+	contains SeguridadContext
+}
+
+Domain ComercioElectronico {
+  domainVisionStatement "Dominio principal que abarca todas las funcionalidades y procesos del sistema de comercio electrónico."
+Subdomain Seguridad {
+    type GENERIC_SUBDOMAIN
+    domainVisionStatement "Dedicado a la seguridad del sistema, protegiendo contra amenazas y asegurando la encriptación de datos sensibles."
+  }
+}
 
 
-ContextMap ComercioElectronico{
+BoundedContext SeguridadContext implements Seguridad {
+  type SYSTEM
+  domainVisionStatement "Dedicado a la seguridad del sistema, incluyendo protección contra amenazas y encriptación de datos."
 
-  contains login,ventas,devoluciones,atencionCliente,compras
-
-login -> ventas
-ventas [U]-> [D,ACL] atencionCliente
-devoluciones[U]-> [D,ACL]ventas
-compras [U] -> [D,ACL]ventas
-compras ->login
-
-
+  Aggregate AmenazasSeguridad {
+    Entity Amenaza {
+      aggregateRoot
+      String amenazaId
+      String nombre
+      String descripcion
+    }
+  }
 }
