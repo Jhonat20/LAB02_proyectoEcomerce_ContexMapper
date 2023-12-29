@@ -1,0 +1,9 @@
+ContextMap TiendaEnLineaMapaContexto {
+  type SYSTEM_LANDSCAPE
+  state TO_BE
+
+  contains GestionPedidosContext
+
+}
+
+BoundedContext GestionPedidosContext
