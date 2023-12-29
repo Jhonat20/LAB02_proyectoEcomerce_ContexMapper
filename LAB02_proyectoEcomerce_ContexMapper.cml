@@ -1,0 +1,32 @@
+ContextMap TiendaEnLineaMapaContexto {
+	type SYSTEM_LANDSCAPE
+	state TO_BE
+	contains AnaliticasReportingContext
+}
+
+Domain ComercioElectronico {
+	domainVisionStatement "Dominio principal que abarca todas las funcionalidades y procesos del sistema de comercio electrónico."
+Subdomain AnaliticasReporting {
+		type SUPPORTING_DOMAIN
+		domainVisionStatement "Subdominio encargado del análisis de datos y generación de informes para una mejor comprensión del rendimiento del negocio."
+	}
+
+}
+
+BoundedContext AnaliticasReportingContext implements AnaliticasReporting {
+  type APPLICATION
+  domainVisionStatement "Proporciona funcionalidades de análisis y generación de informes para el negocio."
+
+  Aggregate Informes {
+    Entity Informe {
+      aggregateRoot
+      String informeId
+      String tipo
+      DateTime fechaCreacion
+      String contenido
+    }
+  }
+}
+
+
+
