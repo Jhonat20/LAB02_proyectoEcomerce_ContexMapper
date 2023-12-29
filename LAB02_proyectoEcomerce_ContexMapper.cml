@@ -1,0 +1,52 @@
+ContextMap TiendaEnLineaMapaContexto {
+	type SYSTEM_LANDSCAPE
+	state TO_BE
+	contains ProcesoPagoContext
+}
+Domain ComercioElectronico {
+  domainVisionStatement "Dominio principal que abarca todas las funcionalidades y procesos del sistema de comercio electrónico."
+
+Subdomain ProcesamientoPagos {
+    type CORE_DOMAIN
+    domainVisionStatement "Este subdominio gestiona el procesamiento de pagos, incluyendo la integración con pasarelas de pago y la confirmación de transacciones."
+  }
+
+}
+
+
+BoundedContext ProcesoPagoContext implements ProcesamientoPagos {
+  type FEATURE
+  domainVisionStatement "Gestiona el proceso de pago, incluyendo la integración con pasarelas de pago y confirmación de transacciones."
+
+  Aggregate TransaccionesPago {
+    Entity Transaccion {
+      aggregateRoot
+      String transaccionId
+      String clienteId
+      Double monto
+      Date fecha
+    }
+    
+    Entity MetodoPago {
+      String metodoPagoId
+      String nombre
+    }
+  }
+
+  Aggregate PasarelasPago {
+    Entity PasarelaPago {
+      aggregateRoot
+      String pasarelaId
+      String nombre
+    }
+
+    Entity RegistroPago {
+      String registroPagoId
+      String transaccionId
+      String pasarelaId
+      Double monto
+      String estado
+    }
+  }
+
+}
