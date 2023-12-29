@@ -1,31 +1,23 @@
 digraph "ContextMapGraph" {
 graph ["imagepath"="/tmp/GraphvizJava"]
-<<<<<<< HEAD
-"atencionCliente" ["margin"="0.3","orientation"="299","shape"="egg","fontsize"="16","style"="bold","label"="atencionCliente\n","fontname"="sans-serif"]
-"compras" ["margin"="0.3","orientation"="318","shape"="egg","fontsize"="16","style"="bold","label"="compras\n","fontname"="sans-serif"]
-"ventas" ["margin"="0.3","orientation"="181","shape"="egg","fontsize"="16","style"="bold","label"="ventas\n","fontname"="sans-serif"]
-"login" ["margin"="0.3","orientation"="23","shape"="egg","fontsize"="16","style"="bold","label"="login\n","fontname"="sans-serif"]
-"devoluciones" ["margin"="0.3","orientation"="183","shape"="egg","fontsize"="16","style"="bold","label"="devoluciones\n","fontname"="sans-serif"]
-=======
-"atencionCliente" ["margin"="0.3","orientation"="17","shape"="egg","fontsize"="16","style"="bold","label"="atencionCliente\n","fontname"="sans-serif"]
-"compras" ["margin"="0.3","orientation"="342","shape"="egg","fontsize"="16","style"="bold","label"="compras\n","fontname"="sans-serif"]
-"ventas" ["margin"="0.3","orientation"="8","shape"="egg","fontsize"="16","style"="bold","label"="ventas\n","fontname"="sans-serif"]
-"pedidos" ["margin"="0.3","orientation"="16","shape"="egg","fontsize"="16","style"="bold","label"="pedidos\n","fontname"="sans-serif"]
-"pagos" ["margin"="0.3","orientation"="112","shape"="egg","fontsize"="16","style"="bold","label"="pagos\n","fontname"="sans-serif"]
-"login" ["margin"="0.3","orientation"="219","shape"="egg","fontsize"="16","style"="bold","label"="login\n","fontname"="sans-serif"]
-"devoluciones" ["margin"="0.3","orientation"="176","shape"="egg","fontsize"="16","style"="bold","label"="devoluciones\n","fontname"="sans-serif"]
->>>>>>> Jhon
-"compras" -> "ventas" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
-<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
-</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
-<tr><td bgcolor="white">U</td></tr>
-</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"atencionCliente" ["margin"="0.3","orientation"="200","shape"="egg","fontsize"="16","style"="bold","label"="atencionCliente\n","fontname"="sans-serif"]
+"compras" ["margin"="0.3","orientation"="82","shape"="egg","fontsize"="16","style"="bold","label"="compras\n","fontname"="sans-serif"]
+"pedidos" ["margin"="0.3","orientation"="14","shape"="egg","fontsize"="16","style"="bold","label"="pedidos\n","fontname"="sans-serif"]
+"pagos" ["margin"="0.3","orientation"="117","shape"="egg","fontsize"="16","style"="bold","label"="pagos\n","fontname"="sans-serif"]
+"ventas" ["margin"="0.3","orientation"="39","shape"="egg","fontsize"="16","style"="bold","label"="ventas\n","fontname"="sans-serif"]
+"login" ["margin"="0.3","orientation"="76","shape"="egg","fontsize"="16","style"="bold","label"="login\n","fontname"="sans-serif"]
+"devoluciones" ["margin"="0.3","orientation"="153","shape"="egg","fontsize"="16","style"="bold","label"="devoluciones\n","fontname"="sans-serif"]
 "compras" -> "pedidos" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
 <tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
 </table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">U</td></tr>
 </table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
 "compras" -> "pagos" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"compras" -> "ventas" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
 <tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
 </table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">U</td></tr>
