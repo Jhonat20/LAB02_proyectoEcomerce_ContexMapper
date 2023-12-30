@@ -2,6 +2,7 @@ ContextMap TiendaEnLineaMapaContexto {
 	type SYSTEM_LANDSCAPE
 	state TO_BE
 
+
   contains GestionProductosContext
   contains GestionPedidosContext
   contains GestionDevolucionesContext
@@ -14,6 +15,7 @@ ContextMap TiendaEnLineaMapaContexto {
   contains NotificacionesComunicacionesContext
   contains IntegracionRedesSocialesContext
   contains AnaliticasReportingContext
+  contains ServicioClienteContext
  }
 
 Domain ComercioElectronico {
@@ -71,6 +73,12 @@ Subdomain GestionProductos {
 
 		type SUPPORTING_DOMAIN
 	}
+  
+  Subdomain ServicioCliente {
+  
+    type SUPPORTING_DOMAIN
+   
+    }
 }
 
 BoundedContext GestionPedidosContext implements GestionPedidos {
@@ -378,6 +386,23 @@ BoundedContext AnaliticasReportingContext implements AnaliticasReporting {
       }
       }
       }
+
+
+BoundedContext ServicioClienteContext implements ServicioCliente {
+  type APPLICATION
+ 
+  Aggregate Consultas {
+    Entity Consulta {
+      aggregateRoot
+      String consultaId
+      String clienteId
+      String contenido
+      DateTime fechaCreacion
+      DateTime fechaResolucion
+      Boolean resuelta
+    }
+  }
+}
 
 
 
