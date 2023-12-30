@@ -1,18 +1,68 @@
+
 ContextMap TiendaEnLineaMapaContexto {
   type SYSTEM_LANDSCAPE
   state TO_BE
-  
-  contains GestionClientesContext
 
-}
+  contains GestionProductosContext
+  contains GestionPedidosContext
+  contains GestionClientesContext
+ }
 
 Domain ComercioElectronico {
-  
-  Subdomain GestionClientes {
+Subdomain GestionPedidos {
+    
+    type CORE_DOMAIN
+    
+     }
+Subdomain GestionProductos {
+    type CORE_DOMAIN
+
+
+     }
+     
+     Subdomain GestionClientes {
     type CORE_DOMAIN
    
     }
+}
 
+BoundedContext GestionPedidosContext implements GestionPedidos {
+  type FEATURE
+   
+  Aggregate CarritoCompras {
+    Entity ItemCarrito {
+      aggregateRoot
+      String productoId
+      String nombreProducto
+      Double precioUnitario
+      int cantidad
+    }
+  }
+
+  
+  
+}
+
+
+BoundedContext GestionProductosContext implements GestionProductos {
+  type FEATURE
+ 
+  Aggregate CatalogoProductos {
+    Entity Producto {
+      aggregateRoot
+      String productoId
+      String nombre
+      String descripcion
+      Double precio
+      int cantidadEnInventario
+    }
+    
+    Entity DescripcionProducto {
+      String productoId
+      String descripcion
+      String imagen
+    }
+  }
 }
 
 BoundedContext GestionClientesContext implements GestionClientes {
@@ -50,5 +100,3 @@ BoundedContext GestionClientesContext implements GestionClientes {
     }
   }
 }
-
-
