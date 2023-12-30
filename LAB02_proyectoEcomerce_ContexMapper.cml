@@ -35,8 +35,8 @@ BoundedContext GestionClientesContext implements GestionClientes {
     }
   }
 
-  Aggregate HistorialPedidos {
-    Entity Pedido {
+ Aggregate HistorialPedidos {
+    Entity  Pedido {
       aggregateRoot
       String pedidoId
       String clienteId
