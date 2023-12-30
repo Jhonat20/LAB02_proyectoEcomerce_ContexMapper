@@ -108,7 +108,6 @@ Subdomain GestionProductos {
 }
 
 BoundedContext GestionPedidosContext implements GestionPedidos {
-  
   type FEATURE
    
   Aggregate CarritoCompras {
