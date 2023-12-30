@@ -9,7 +9,7 @@ ContextMap TiendaEnLineaMapaContexto {
   contains GestionClientesContext
   contains ProcesoPagosContext
   contains CarritoComprasContext
-  contains VentasContex
+  contains VentasContext
   contains AutenticacionAutorizacionContext
   contains GestionSesionesContext
   contains SeguridadContext
