@@ -9,6 +9,7 @@ ContextMap TiendaEnLineaMapaContexto {
   contains GestionClientesContext
   contains ProcesoPagosContext
   contains CarritoComprasContext
+  contains VentasContex
   contains AutenticacionAutorizacionContext
   contains GestionSesionesContext
   contains SeguridadContext
@@ -66,6 +67,11 @@ Subdomain GestionProductos {
     type CORE_DOMAIN
     
     }
+    Subdomain Ventas{
+      type CORE_DOMAIN
+
+    }
+
     Subdomain GestionDevoluciones{
     type SUPPORTING_DOMAIN
   }
@@ -421,6 +427,58 @@ BoundedContext ServicioClienteContext implements ServicioCliente {
       DateTime fechaCreacion
       DateTime fechaResolucion
       Boolean resuelta
+    }
+  }
+}
+BoundedContext VentasContext implements Ventas {
+  type FEATURE
+
+  Aggregate Ventas {
+    Entity Venta {
+      aggregateRoot
+      String ventaId
+      String clienteId
+      Date fechaVenta
+      Double montoTotal
+      String estado
+    }
+
+    Entity DetalleVenta {
+      String detalleId
+      String ventaId
+      String productoId
+      int cantidad
+      Double precioUnitario
+    }
+  }
+
+  Aggregate Facturas {
+    Entity Factura {
+      aggregateRoot
+      String facturaId
+      String ventaId
+      Date fechaFactura
+      Double montoTotal
+      String estado
+    }
+
+    Entity DetalleFactura {
+      String detalleId
+      String facturaId
+      String productoId
+      int cantidad
+      Double precioUnitario
+    }
+  }
+
+  Aggregate Envio {
+    Entity Envio {
+      aggregateRoot
+      String envioId
+      String ventaId
+      String direccionEnvio
+      Date fechaEnvio
+      String estado
     }
   }
 }
