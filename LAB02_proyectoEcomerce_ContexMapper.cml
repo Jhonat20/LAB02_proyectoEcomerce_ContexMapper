@@ -8,14 +8,13 @@ contains GestionPedidosContext
 Domain ComercioElectronico {
 Subdomain GestionPedidos {
     type CORE_DOMAIN
-    domainVisionStatement "Subdominio responsable del proceso de compra en línea, incluyendo el carrito de compras, finalización de pedidos y seguimiento."
-  }
+    
+     }
 }
 
 BoundedContext GestionPedidosContext implements GestionPedidos {
   type FEATURE
-  domainVisionStatement "Maneja todo el proceso de compra en línea, incluyendo el carrito de compras, finalización de pedidos y seguimiento."
-  
+   
   Aggregate CarritoCompras {
     Entity ItemCarrito {
       aggregateRoot
