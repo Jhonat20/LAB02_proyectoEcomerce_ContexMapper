@@ -1,19 +1,19 @@
 digraph "ContextMapGraph" {
 graph ["imagepath"="/tmp/GraphvizJava"]
-"AnaliticasReportingContext" ["margin"="0.3","orientation"="175","shape"="egg","fontsize"="16","style"="bold","label"="AnaliticasReportingContext\n","fontname"="sans-serif"]
-"VentasContext" ["margin"="0.3","orientation"="334","shape"="egg","fontsize"="16","style"="bold","label"="VentasContext\n","fontname"="sans-serif"]
-"AutenticacionAutorizacionContext" ["margin"="0.3","orientation"="209","shape"="egg","fontsize"="16","style"="bold","label"="AutenticacionAutorizacionContext\n","fontname"="sans-serif"]
-"CarritoComprasContext" ["margin"="0.3","orientation"="251","shape"="egg","fontsize"="16","style"="bold","label"="CarritoComprasContext\n","fontname"="sans-serif"]
-"GestionProductosContext" ["margin"="0.3","orientation"="114","shape"="egg","fontsize"="16","style"="bold","label"="GestionProductosContext\n","fontname"="sans-serif"]
-"GestionDevolucionesContext" ["margin"="0.3","orientation"="197","shape"="egg","fontsize"="16","style"="bold","label"="GestionDevolucionesContext\n","fontname"="sans-serif"]
-"GestionPedidosContext" ["margin"="0.3","orientation"="152","shape"="egg","fontsize"="16","style"="bold","label"="GestionPedidosContext\n","fontname"="sans-serif"]
-"GestionClientesContext" ["margin"="0.3","orientation"="11","shape"="egg","fontsize"="16","style"="bold","label"="GestionClientesContext\n","fontname"="sans-serif"]
-"GestionSesionesContext" ["margin"="0.3","orientation"="106","shape"="egg","fontsize"="16","style"="bold","label"="GestionSesionesContext\n","fontname"="sans-serif"]
-"IntegracionRedesSocialesContext" ["margin"="0.3","orientation"="94","shape"="egg","fontsize"="16","style"="bold","label"="IntegracionRedesSocialesContext\n","fontname"="sans-serif"]
-"NotificacionesComunicacionesContext" ["margin"="0.3","orientation"="20","shape"="egg","fontsize"="16","style"="bold","label"="NotificacionesComunicacionesContext\n","fontname"="sans-serif"]
-"ProcesoPagosContext" ["margin"="0.3","orientation"="76","shape"="egg","fontsize"="16","style"="bold","label"="ProcesoPagosContext\n","fontname"="sans-serif"]
-"SeguridadContext" ["margin"="0.3","orientation"="28","shape"="egg","fontsize"="16","style"="bold","label"="SeguridadContext\n","fontname"="sans-serif"]
-"ServicioClienteContext" ["margin"="0.3","orientation"="277","shape"="egg","fontsize"="16","style"="bold","label"="ServicioClienteContext\n","fontname"="sans-serif"]
+"AnaliticasReportingContext" ["margin"="0.3","orientation"="62","shape"="egg","fontsize"="16","style"="bold","label"="AnaliticasReportingContext\n","fontname"="sans-serif"]
+"VentasContext" ["margin"="0.3","orientation"="288","shape"="egg","fontsize"="16","style"="bold","label"="VentasContext\n","fontname"="sans-serif"]
+"AutenticacionAutorizacionContext" ["margin"="0.3","orientation"="329","shape"="egg","fontsize"="16","style"="bold","label"="AutenticacionAutorizacionContext\n","fontname"="sans-serif"]
+"CarritoComprasContext" ["margin"="0.3","orientation"="202","shape"="egg","fontsize"="16","style"="bold","label"="CarritoComprasContext\n","fontname"="sans-serif"]
+"GestionProductosContext" ["margin"="0.3","orientation"="141","shape"="egg","fontsize"="16","style"="bold","label"="GestionProductosContext\n","fontname"="sans-serif"]
+"GestionClientesContext" ["margin"="0.3","orientation"="131","shape"="egg","fontsize"="16","style"="bold","label"="GestionClientesContext\n","fontname"="sans-serif"]
+"GestionDevolucionesContext" ["margin"="0.3","orientation"="43","shape"="egg","fontsize"="16","style"="bold","label"="GestionDevolucionesContext\n","fontname"="sans-serif"]
+"GestionPedidosContext" ["margin"="0.3","orientation"="214","shape"="egg","fontsize"="16","style"="bold","label"="GestionPedidosContext\n","fontname"="sans-serif"]
+"GestionSesionesContext" ["margin"="0.3","orientation"="76","shape"="egg","fontsize"="16","style"="bold","label"="GestionSesionesContext\n","fontname"="sans-serif"]
+"IntegracionRedesSocialesContext" ["margin"="0.3","orientation"="75","shape"="egg","fontsize"="16","style"="bold","label"="IntegracionRedesSocialesContext\n","fontname"="sans-serif"]
+"NotificacionesComunicacionesContext" ["margin"="0.3","orientation"="314","shape"="egg","fontsize"="16","style"="bold","label"="NotificacionesComunicacionesContext\n","fontname"="sans-serif"]
+"ProcesoPagosContext" ["margin"="0.3","orientation"="228","shape"="egg","fontsize"="16","style"="bold","label"="ProcesoPagosContext\n","fontname"="sans-serif"]
+"SeguridadContext" ["margin"="0.3","orientation"="30","shape"="egg","fontsize"="16","style"="bold","label"="SeguridadContext\n","fontname"="sans-serif"]
+"ServicioClienteContext" ["margin"="0.3","orientation"="149","shape"="egg","fontsize"="16","style"="bold","label"="ServicioClienteContext\n","fontname"="sans-serif"]
 "AnaliticasReportingContext" -> "VentasContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
 "AutenticacionAutorizacionContext" -> "CarritoComprasContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">D</td></tr>
@@ -46,12 +46,12 @@ graph ["imagepath"="/tmp/GraphvizJava"]
 </table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">U</td></tr>
 </table>>,"style"="bold","label"="Customer/Supplier","dir"="none","fontname"="sans-serif"]
-"GestionPedidosContext" -> "CarritoComprasContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+"GestionPedidosContext" -> "GestionDevolucionesContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">D</td></tr>
 </table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">U</td></tr>
 </table>>,"style"="bold","label"="Customer/Supplier","dir"="none","fontname"="sans-serif"]
-"GestionPedidosContext" -> "GestionDevolucionesContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+"GestionPedidosContext" -> "CarritoComprasContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">D</td></tr>
 </table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">U</td></tr>
