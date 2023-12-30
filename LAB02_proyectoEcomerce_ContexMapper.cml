@@ -4,18 +4,15 @@ ContextMap TiendaEnLineaMapaContexto {
 	contains CarritoComprasContext
 }
 Domain ComercioElectronico {
-  domainVisionStatement "Dominio principal que abarca todas las funcionalidades y procesos del sistema de comercio electrónico."
-
+ 
 Subdomain CarritoCompras {
     type CORE_DOMAIN
-    domainVisionStatement "Este subdominio gestiona el procesamiento de pagos, incluyendo la integración con pasarelas de pago y la confirmación de transacciones."
-  }
+    }
 
 }
 BoundedContext CarritoComprasContext implements CarritoCompras {
   type FEATURE
-  domainVisionStatement "Gestiona el carrito de compras, incluyendo la gestión de productos, cantidades y transacciones de compra."
-
+  
   Aggregate Carrito {
     Entity ItemCarrito {
       aggregateRoot
