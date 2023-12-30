@@ -7,6 +7,7 @@ ContextMap TiendaEnLineaMapaContexto {
   contains GestionClientesContext
   contains ProcesoPagoContext
   contains CarritoComprasContext
+  contains GestionSesionesContext
  }
 
 Domain ComercioElectronico {
@@ -32,6 +33,11 @@ Subdomain GestionProductos {
    Subdomain CarritoCompras {
     type CORE_DOMAIN
     }
+      Subdomain GestionSesiones {
+    type GENERIC_SUBDOMAIN
+    
+  }
+
 }
 
 BoundedContext GestionPedidosContext implements GestionPedidos {
@@ -180,4 +186,27 @@ BoundedContext CarritoComprasContext implements CarritoCompras {
       }
       
       }
+}
+BoundedContext GestionSesionesContext implements GestionSesiones {
+  type SYSTEM
+  Aggregate SesionesUsuario {
+    Entity Sesion {
+      aggregateRoot
+      String sesionId
+      String usuarioId
+      LocalDateTime fechaInicio
+      LocalDateTime fechaExpiracion
+    }
+  }
+
+  Aggregate CookiesUsuario {
+    Entity Cookie {
+      aggregateRoot
+      String cookieId
+      String usuarioId
+      String valorCookie
+      LocalDateTime fechaCreacion
+      LocalDateTime fechaExpiracion
+    }
+  }
 }
