@@ -1,11 +1,14 @@
 ContextMap TiendaEnLineaMapaContexto {
 	type SYSTEM_LANDSCAPE
 	state TO_BE
+	
+  
   contains GestionProductosContext
   contains GestionPedidosContext
   contains GestionClientesContext
   contains ProcesoPagosContext
   contains CarritoComprasContext
+  contains AutenticacionAutorizacionContext
   contains GestionSesionesContext
   contains SeguridadContext
   contains NotificacionesComunicacionesContext
@@ -13,6 +16,7 @@ ContextMap TiendaEnLineaMapaContexto {
  }
 
 Domain ComercioElectronico {
+
 Subdomain GestionPedidos {
     
     type CORE_DOMAIN
@@ -35,6 +39,10 @@ Subdomain GestionProductos {
    }
    Subdomain CarritoCompras {
     type CORE_DOMAIN
+    
+    }
+    Subdomain AutenticacionAutorizacion {
+    type SUPPORTING_DOMAIN
     }
       Subdomain GestionSesiones {
     type GENERIC_SUBDOMAIN
@@ -47,6 +55,7 @@ Subdomain GestionProductos {
   
   Subdomain NotificacionesComunicaciones {
     type GENERIC_SUBDOMAIN
+
   }
 
   Subdomain IntegracionRedesSociales {
@@ -132,31 +141,15 @@ BoundedContext ProcesoPagosContext implements ProcesamientoPagos {
   Aggregate TransaccionesPago {
     Entity Transaccion {
       aggregateRoot
-      String transaccionId
-      String clienteId
-      Double monto
-      Date fecha
+      String usuarioId
+      String nombreUsuario
+      String correoElectronico
+      String contrasenaHash
     }
     
-    Entity MetodoPago {
-      String metodoPagoId
+    Entity Rol {
+      String rolId
       String nombre
-    }
-  }
-
-  Aggregate PasarelasPago {
-    Entity PasarelaPago {
-      aggregateRoot
-      String pasarelaId
-      String nombre
-    }
-
-    Entity RegistroPago {
-      String registroPagoId
-      String transaccionId
-      String pasarelaId
-      Double monto
-      String estado
     }
   }
 
@@ -300,4 +293,23 @@ BoundedContext IntegracionRedesSocialesContext implements IntegracionRedesSocial
     }
   }
 }
+BoundedContext AutenticacionAutorizacionContext implements AutenticacionAutorizacion {
+  type APPLICATION
+  Aggregate Usuarios {
+    Entity Usuario {
+      aggregateRoot
+      String usuarioId
+      String nombreUsuario
+      String correoElectronico
+      String contrasenaHash
+    }
+    
+    Entity Rol {
+      String rolId
+      String nombre
+    }
+  }
+
+}
+
 
