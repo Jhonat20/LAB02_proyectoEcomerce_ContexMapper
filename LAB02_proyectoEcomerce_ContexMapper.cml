@@ -4,11 +4,10 @@ ContextMap TiendaEnLineaMapaContexto {
 	contains AutenticacionAutorizacionContext
 }
 Domain ComercioElectronico {
-  domainVisionStatement "Dominio principal que abarca todas las funcionalidades y procesos del sistema de comercio electrónico."
-
+  
 Subdomain AutenticacionAutorizacion {
     type SUPPORTING_DOMAIN
-    domainVisionStatement "Subdominio dedicado a la autenticación y autorización de usuarios, asegurando sistemas de acceso seguros."
+   
   }
 
 }
@@ -16,8 +15,7 @@ Subdomain AutenticacionAutorizacion {
 
 BoundedContext AutenticacionAutorizacionContext implements AutenticacionAutorizacion {
   type APPLICATION
-  domainVisionStatement "Maneja la autenticación y autorización de usuarios, asegurando sistemas de acceso seguros."
-
+ 
   Aggregate Usuarios {
     Entity Usuario {
       aggregateRoot
