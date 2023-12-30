@@ -9,7 +9,7 @@ ContextMap TiendaEnLineaMapaContexto {
   contains GestionSesionesContext
   contains SeguridadContext
   contains NotificacionesComunicacionesContext
-  
+  contains IntegracionRedesSocialescontext
  }
 
 Domain ComercioElectronico {
@@ -45,6 +45,10 @@ Subdomain GestionProductos {
      }
   
   Subdomain NotificacionesComunicaciones {
+    type GENERIC_SUBDOMAIN
+  }
+
+  Subdomain IntegracionRedesSociales {
     type GENERIC_SUBDOMAIN
   }
 }
@@ -257,3 +261,42 @@ BoundedContext NotificacionesComunicacionesContext implements NotificacionesComu
     }
   }
 }
+
+BoundedContext IntegracionRedesSocialesContext implements IntegracionRedesSociales {
+  type FEATURE
+
+  Aggregate PublicacionesRedesSociales {
+    Entity Publicacion {
+      aggregateRoot
+      String publicacionId
+      String usuarioId
+      String contenido
+      LocalDateTime fechaPublicacion
+      List<String> etiquetas
+    }
+  }
+
+  Aggregate PerfilesUsuariosRedesSociales {
+    Entity UsuarioRedesSociales {
+      aggregateRoot
+      String usuarioId
+      String nombreUsuario
+      String nombreCompleto
+      String biografia
+      List<String> seguidores
+      List<String> siguiendo
+    }
+  }
+
+  Aggregate ComentariosPublicaciones {
+    Entity Comentario {
+      aggregateRoot
+      String comentarioId
+      String usuarioId
+      String publicacionId
+      String contenido
+      LocalDateTime fechaComentario
+    }
+  }
+}
+
