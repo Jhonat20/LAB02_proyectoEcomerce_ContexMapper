@@ -16,6 +16,27 @@ ContextMap TiendaEnLineaMapaContexto {
   contains IntegracionRedesSocialesContext
   contains AnaliticasReportingContext
   contains ServicioClienteContext
+
+
+
+  GestionProductosContext [SK]<->[SK] GestionClientesContext// shared kernel
+  GestionProductosContext [ U , S ]->[ D , C ] CarritoComprasContext
+  GestionPedidosContext [ U , S ]->[ D , C ] CarritoComprasContext
+  GestionPedidosContext [ U , S ]->[ D , C ] GestionDevolucionesContext // dependencia customers
+  GestionDevolucionesContext [ D , CF ]<-[ U , OHS , PL ] GestionProductosContext //conformis
+  GestionDevolucionesContext [ U , S ]->[ D , C ] GestionPedidosContext
+  GestionClientesContext  [SK]<->[SK] GestionProductosContext
+  GestionClientesContext  [ U , S ]->[ D , C ] CarritoComprasContext
+  ProcesoPagosContext  [ U , S ]->[ D , C ] GestionPedidosContext
+  CarritoComprasContext [ U , S ]->[ D , C ] GestionProductosContext
+  CarritoComprasContext [ U , S ]->[ D , C ] GestionClientesContext
+  AutenticacionAutorizacionContext [ U , S ]->[ D , C ] CarritoComprasContext
+  /*
+  NotificacionesComunicacionesContext [P]<->[P] VentasContex
+  IntegracionRedesSocialesContext [P]<->[P] VentasContex
+  AnaliticasReportingContext [P]<->[P] VentasContex
+  ServicioClienteContext [P]<->[P] VentasContex
+  */
  }
 
 Domain ComercioElectronico {
