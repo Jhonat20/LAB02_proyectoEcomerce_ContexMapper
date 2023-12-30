@@ -7,19 +7,17 @@ ContextMap TiendaEnLineaMapaContexto {
 }
 
 Domain ComercioElectronico {
-  domainVisionStatement "Dominio principal que abarca todas las funcionalidades y procesos del sistema de comercio electrónico."
-
+  
   Subdomain GestionClientes {
     type CORE_DOMAIN
-    domainVisionStatement "Encargado de la administración de perfiles de clientes, historial de pedidos y manejo de direcciones y detalles de facturación."
-  }
+   
+    }
 
 }
 
 BoundedContext GestionClientesContext implements GestionClientes {
   type FEATURE
-  domainVisionStatement "Responsable de administrar perfiles de clientes, historial de pedidos y manejo de direcciones y detalles de facturación."
-
+  
   Aggregate Clientes {
     Entity Cliente {
       aggregateRoot
