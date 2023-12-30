@@ -32,12 +32,10 @@ ContextMap TiendaEnLineaMapaContexto {
   CarritoComprasContext [ U , S ]->[ D , C ] GestionProductosContext
   CarritoComprasContext [ U , S ]->[ D , C ] GestionClientesContext
   AutenticacionAutorizacionContext [ U , S ]->[ D , C ] CarritoComprasContext
-  /*
-  NotificacionesComunicacionesContext [P]<->[P] VentasContex
-  IntegracionRedesSocialesContext [P]<->[P] VentasContex
-  AnaliticasReportingContext [P]<->[P] VentasContex
-  ServicioClienteContext [P]<->[P] VentasContex
-  */
+  NotificacionesComunicacionesContext [P]<->[P] VentasContext
+  IntegracionRedesSocialesContext [P]<->[P] VentasContext
+  AnaliticasReportingContext [P]<->[P] VentasContext
+  ServicioClienteContext [P]<->[P] VentasContext
  }
 
 Domain ComercioElectronico {
