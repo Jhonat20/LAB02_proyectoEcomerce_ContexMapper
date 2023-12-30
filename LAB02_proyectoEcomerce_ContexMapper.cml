@@ -1,13 +1,13 @@
 ContextMap TiendaEnLineaMapaContexto {
-  type SYSTEM_LANDSCAPE
-  state TO_BE
-
+	type SYSTEM_LANDSCAPE
+	state TO_BE
   contains GestionProductosContext
   contains GestionPedidosContext
   contains GestionClientesContext
   contains ProcesoPagoContext
   contains CarritoComprasContext
   contains GestionSesionesContext
+  contains SeguridadContext
  }
 
 Domain ComercioElectronico {
@@ -37,6 +37,10 @@ Subdomain GestionProductos {
     type GENERIC_SUBDOMAIN
     
   }
+  
+  Subdomain Seguridad {
+    type GENERIC_SUBDOMAIN
+     }
 
 }
 
@@ -207,6 +211,21 @@ BoundedContext GestionSesionesContext implements GestionSesiones {
       String valorCookie
       LocalDateTime fechaCreacion
       LocalDateTime fechaExpiracion
+    }
+  }
+}
+
+BoundedContext SeguridadContext implements Seguridad {
+  type SYSTEM
+ 
+  Aggregate AmenazasSeguridad {
+    Entity Amenaza {
+      aggregateRoot
+      String amenazaId
+      String nombre
+      String descripcion
+
+      
     }
   }
 }
