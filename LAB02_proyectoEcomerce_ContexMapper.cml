@@ -127,6 +127,7 @@ BoundedContext GestionClientesContext implements GestionClientes {
 }
 
 BoundedContext ProcesoPagosContext implements ProcesamientoPagos {
+  
   type FEATURE
   Aggregate TransaccionesPago {
     Entity Transaccion {
