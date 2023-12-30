@@ -4,7 +4,7 @@ ContextMap TiendaEnLineaMapaContexto {
   contains GestionProductosContext
   contains GestionPedidosContext
   contains GestionClientesContext
-  contains ProcesoPagoContext
+  contains ProcesoPagosContext
   contains CarritoComprasContext
   contains GestionSesionesContext
   contains SeguridadContext
@@ -30,6 +30,7 @@ Subdomain GestionProductos {
     }
     Subdomain ProcesamientoPagos {
     type CORE_DOMAIN
+
    
    }
    Subdomain CarritoCompras {
@@ -125,9 +126,9 @@ BoundedContext GestionClientesContext implements GestionClientes {
   }
 }
 
-BoundedContext ProcesoPagoContext implements ProcesamientoPagos {
-  type FEATURE
+BoundedContext ProcesoPagosContext implements ProcesamientoPagos {
   
+  type FEATURE
   Aggregate TransaccionesPago {
     Entity Transaccion {
       aggregateRoot
