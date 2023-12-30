@@ -4,7 +4,8 @@ ContextMap TiendaEnLineaMapaContexto {
   state TO_BE
 
   contains GestionProductosContext
-}
+  contains GestionPedidosContext
+ }
 
 Domain ComercioElectronico {
 Subdomain GestionPedidos {
@@ -12,6 +13,12 @@ Subdomain GestionPedidos {
     type CORE_DOMAIN
     
      }
+Subdomain GestionProductos {
+    type CORE_DOMAIN
+
+
+     }
+     
 }
 
 BoundedContext GestionPedidosContext implements GestionPedidos {
@@ -28,9 +35,7 @@ BoundedContext GestionPedidosContext implements GestionPedidos {
   }
 
   
-  Subdomain GestionProductos {
-    type CORE_DOMAIN
-     }
+  
 }
 
 
