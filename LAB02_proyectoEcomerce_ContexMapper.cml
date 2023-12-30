@@ -10,6 +10,7 @@ ContextMap TiendaEnLineaMapaContexto {
   contains SeguridadContext
   contains NotificacionesComunicacionesContext
   contains IntegracionRedesSocialescontext
+  contains ProcesoPagoContext
  }
 
 Domain ComercioElectronico {
@@ -51,7 +52,12 @@ Subdomain GestionProductos {
   Subdomain IntegracionRedesSociales {
     type GENERIC_SUBDOMAIN
   }
+  Subdomain ProcesamientoPagos {
+    type CORE_DOMAIN
+   
+   }
 }
+
 
 BoundedContext GestionPedidosContext implements GestionPedidos {
   type FEATURE
@@ -299,4 +305,41 @@ BoundedContext IntegracionRedesSocialesContext implements IntegracionRedesSocial
     }
   }
 }
+BoundedContext ProcesoPagoContext implements ProcesamientoPagos {
+  type FEATURE
+  domainVisionStatement "Gestiona el proceso de pago, incluyendo la integración con pasarelas de pago y confirmación de transacciones."
+
+  Aggregate TransaccionesPago {
+    Entity Transaccion {
+      aggregateRoot
+      String transaccionId
+      String clienteId
+      Double monto
+      Date fecha
+    }
+    
+    Entity MetodoPago {
+      String metodoPagoId
+      String nombre
+    }
+  }
+
+  Aggregate PasarelasPago {
+    Entity PasarelaPago {
+      aggregateRoot
+      String pasarelaId
+      String nombre
+    }
+
+    Entity RegistroPago {
+      String registroPagoId
+      String transaccionId
+      String pasarelaId
+      Double monto
+      String estado
+    }
+  }
+
+}
+
 
