@@ -9,7 +9,7 @@ ContextMap TiendaEnLineaMapaContexto {
   contains GestionSesionesContext
   contains SeguridadContext
   contains NotificacionesComunicacionesContext
-  contains IntegracionRedesSocialescontext
+  contains IntegracionRedesSocialesContext
  }
 
 Domain ComercioElectronico {
