@@ -1,4 +1,3 @@
-
 ContextMap TiendaEnLineaMapaContexto {
   type SYSTEM_LANDSCAPE
   state TO_BE
@@ -7,6 +6,7 @@ ContextMap TiendaEnLineaMapaContexto {
   contains GestionPedidosContext
   contains GestionClientesContext
   contains ProcesoPagoContext
+  contains CarritoComprasContext
  }
 
 Domain ComercioElectronico {
@@ -29,6 +29,9 @@ Subdomain GestionProductos {
     type CORE_DOMAIN
    
    }
+   Subdomain CarritoCompras {
+    type CORE_DOMAIN
+    }
 }
 
 BoundedContext GestionPedidosContext implements GestionPedidos {
@@ -43,9 +46,6 @@ BoundedContext GestionPedidosContext implements GestionPedidos {
       int cantidad
     }
   }
-
-  
-  
 }
 
 
@@ -106,7 +106,6 @@ BoundedContext GestionClientesContext implements GestionClientes {
   }
 }
 
-
 BoundedContext ProcesoPagoContext implements ProcesamientoPagos {
   type FEATURE
   
@@ -141,4 +140,42 @@ BoundedContext ProcesoPagoContext implements ProcesamientoPagos {
     }
   }
 
+}
+
+
+BoundedContext CarritoComprasContext implements CarritoCompras {
+  type FEATURE
+  
+  Aggregate Carrito {
+    Entity ItemCarrito {
+      aggregateRoot
+      String itemId
+      String productoId
+      Integer cantidad
+      Double precioUnitario
+    }
+    
+    Entity Cliente {
+      String clienteId
+      String nombre
+      String direccion
+    }
+  }
+
+  Aggregate TransaccionesCompra {
+    Entity OrdenCompra {
+      aggregateRoot
+      String ordenId
+      String clienteId
+      Date fechaOrden
+      Double total
+      String estado
+    }
+
+    Entity DetalleOrden {
+      String detalleId
+      String ordenId
+      String itemId
+      Integer cantidad
+      }
 }
