@@ -6,8 +6,7 @@ ContextMap TiendaEnLineaMapaContexto {
 }
 
 Domain ComercioElectronico {
-  domainVisionStatement  "Visión general del dominio de comercio electrónico."
-
+  
   Subdomain GestionProductos {
     type CORE_DOMAIN
   }
@@ -15,8 +14,7 @@ Domain ComercioElectronico {
 
 BoundedContext GestionProductosContext implements GestionProductos {
   type FEATURE
-  domainVisionStatement "Gestiona el catálogo de productos, incluyendo la descripción, imágenes y manejo del inventario."
-  
+   
   Aggregate CatalogoProductos {
     Entity Producto {
       aggregateRoot
