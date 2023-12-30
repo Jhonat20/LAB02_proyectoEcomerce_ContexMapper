@@ -1,10 +1,11 @@
+
 ContextMap TiendaEnLineaMapaContexto {
   type SYSTEM_LANDSCAPE
   state TO_BE
 
-contains GestionPedidosContext
-
+  contains GestionProductosContext
 }
+
 Domain ComercioElectronico {
 Subdomain GestionPedidos {
     
@@ -26,20 +27,30 @@ BoundedContext GestionPedidosContext implements GestionPedidos {
     }
   }
 
-  Aggregate Pedidos {
-    Entity Pedido {
-      aggregateRoot
-      String productoId
-      String clienteId
-      Date fechaPedido
-    }
-
-    Entity LineaPedido {
-      String productoId
-      int cantidad
-      Double precioUnitario
-    }
-  }
-
+  
+  Subdomain GestionProductos {
+    type CORE_DOMAIN
+     }
 }
 
+
+BoundedContext GestionProductosContext implements GestionProductos {
+  type FEATURE
+ 
+  Aggregate CatalogoProductos {
+    Entity Producto {
+      aggregateRoot
+      String productoId
+      String nombre
+      String descripcion
+      Double precio
+      int cantidadEnInventario
+    }
+    
+    Entity DescripcionProducto {
+      String productoId
+      String descripcion
+      String imagen
+    }
+  }
+}
