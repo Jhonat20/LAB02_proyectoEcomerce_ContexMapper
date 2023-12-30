@@ -8,6 +8,8 @@ ContextMap TiendaEnLineaMapaContexto {
   contains CarritoComprasContext
   contains GestionSesionesContext
   contains SeguridadContext
+  contains NotificacionesComunicacionesContext
+  
  }
 
 Domain ComercioElectronico {
@@ -41,7 +43,10 @@ Subdomain GestionProductos {
   Subdomain Seguridad {
     type GENERIC_SUBDOMAIN
      }
-
+  
+  Subdomain NotificacionesComunicaciones {
+    type GENERIC_SUBDOMAIN
+  }
 }
 
 BoundedContext GestionPedidosContext implements GestionPedidos {
@@ -226,6 +231,29 @@ BoundedContext SeguridadContext implements Seguridad {
       String descripcion
 
       
+    }
+  }
+}
+
+BoundedContext NotificacionesComunicacionesContext implements NotificacionesComunicaciones {
+  type FEATURE
+  Aggregate EnvioNotificaciones{
+    Entity Notificacion {
+      aggregateRoot
+      String notificacionI
+      String destinatario
+      String mensaje
+      LocalDateTime fechaEnvio
+    }
+  }
+  Aggregate Comunicaciones {
+    Entity Mensaje {
+      aggregateRoot
+      String mensajeId
+      String remitente
+      String destinatario
+      String contenido
+      LocalDateTime fechaEnvio
     }
   }
 }
