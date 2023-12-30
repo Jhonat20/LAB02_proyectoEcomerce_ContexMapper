@@ -7,8 +7,10 @@ ContextMap TiendaEnLineaMapaContexto {
 Domain ComercioElectronico {
 	
 Subdomain AnaliticasReporting {
+
 		type SUPPORTING_DOMAIN
-		
+
+  
 	}
 
 }
