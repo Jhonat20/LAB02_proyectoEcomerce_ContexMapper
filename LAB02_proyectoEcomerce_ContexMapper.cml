@@ -5,6 +5,7 @@ ContextMap TiendaEnLineaMapaContexto {
   
   contains GestionProductosContext
   contains GestionPedidosContext
+  contains GestionDevolucionesContext
   contains GestionClientesContext
   contains ProcesoPagosContext
   contains CarritoComprasContext
@@ -22,6 +23,7 @@ Subdomain GestionPedidos {
     type CORE_DOMAIN
     
      }
+  
 Subdomain GestionProductos {
     type CORE_DOMAIN
 
@@ -41,6 +43,9 @@ Subdomain GestionProductos {
     type CORE_DOMAIN
     
     }
+    Subdomain GestionDevoluciones{
+    type SUPPORTING_DOMAIN
+  }
     Subdomain AutenticacionAutorizacion {
     type SUPPORTING_DOMAIN
     }
@@ -311,5 +316,48 @@ BoundedContext AutenticacionAutorizacionContext implements AutenticacionAutoriza
   }
 
 }
+
+BoundedContext GestionDevolucionesContext implements GestionDevoluciones {
+  type FEATURE
+
+  Aggregate SolicitudDevolucion {
+    Entity Solicitud {
+      aggregateRoot
+      String solicitudId
+      String clienteId
+      String motivo
+      Date fechaSolicitud
+      String estado
+    }
+
+    Entity DetalleDevolucion {
+      String detalleId
+      String solicitudId
+      String productoId
+      int cantidad
+      String motivo
+    }
+  }
+
+  Aggregate ProcesoDevolucion {
+    Entity Devolucion {
+      aggregateRoot
+      String devolucionId
+      String solicitudId
+      Date fechaDevolucion
+      Double montoDevolucion
+      String estado
+    }
+
+    Entity DetalleDevolucion {
+      String detalleId
+      String devolucionId
+      String productoId
+      int cantidad
+      Double montoDevolucion
+    }
+  }
+}
+
 
 
