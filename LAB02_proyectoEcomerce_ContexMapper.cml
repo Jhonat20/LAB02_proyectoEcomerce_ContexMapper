@@ -44,7 +44,7 @@ Domain ComercioElectronico {
 Subdomain GestionPedidos {
     
     type CORE_DOMAIN
-    
+      domainVisionStatement "Gestionar de manera eficiente y efectiva todos los procesos relacionados con la gestión de pedidos, desde la recepción hasta la entrega, asegurando una experiencia fluida para los clientes y optimizando los recursos internos."
      }
   
 Subdomain GestionProductos {
@@ -108,7 +108,6 @@ Subdomain GestionProductos {
 }
 
 BoundedContext GestionPedidosContext implements GestionPedidos {
-  
   type FEATURE
    
   Aggregate CarritoCompras {
