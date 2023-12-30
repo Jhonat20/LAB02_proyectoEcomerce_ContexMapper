@@ -224,8 +224,6 @@ BoundedContext SeguridadContext implements Seguridad {
       String amenazaId
       String nombre
       String descripcion
-
-      
     }
   }
 }
