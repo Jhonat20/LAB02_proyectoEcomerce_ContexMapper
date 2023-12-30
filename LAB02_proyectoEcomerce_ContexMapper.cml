@@ -2,35 +2,44 @@ ContextMap TiendaEnLineaMapaContexto {
   type SYSTEM_LANDSCAPE
   state TO_BE
 
-  contains GestionProductosContext
+contains GestionPedidosContext
+
 }
-
 Domain ComercioElectronico {
-  domainVisionStatement  "Visión general del dominio de comercio electrónico."
-
-  Subdomain GestionProductos {
+Subdomain GestionPedidos {
     type CORE_DOMAIN
+    domainVisionStatement "Subdominio responsable del proceso de compra en línea, incluyendo el carrito de compras, finalización de pedidos y seguimiento."
   }
 }
 
-BoundedContext GestionProductosContext implements GestionProductos {
+BoundedContext GestionPedidosContext implements GestionPedidos {
   type FEATURE
-  domainVisionStatement "Gestiona el catálogo de productos, incluyendo la descripción, imágenes y manejo del inventario."
+  domainVisionStatement "Maneja todo el proceso de compra en línea, incluyendo el carrito de compras, finalización de pedidos y seguimiento."
   
-  Aggregate CatalogoProductos {
-    Entity Producto {
+  Aggregate CarritoCompras {
+    Entity ItemCarrito {
       aggregateRoot
       String productoId
-      String nombre
-      String descripcion
-      Double precio
-      int cantidadEnInventario
-    }
-    
-    Entity DescripcionProducto {
-      String productoId
-      String descripcion
-      String imagen
+      String nombreProducto
+      Double precioUnitario
+      int cantidad
     }
   }
+
+  Aggregate Pedidos {
+    Entity Pedido {
+      aggregateRoot
+      String productoId
+      String clienteId
+      Date fechaPedido
+    }
+
+    Entity LineaPedido {
+      String productoId
+      int cantidad
+      Double precioUnitario
+    }
+  }
+
 }
+
