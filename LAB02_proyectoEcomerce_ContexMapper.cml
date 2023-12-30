@@ -1,15 +1,148 @@
 ContextMap TiendaEnLineaMapaContexto {
-	type SYSTEM_LANDSCAPE
-	state TO_BE
-	contains CarritoComprasContext
-}
+  type SYSTEM_LANDSCAPE
+  state TO_BE
+
+  contains GestionProductosContext
+  contains GestionPedidosContext
+  contains GestionClientesContext
+  contains ProcesoPagoContext
+  contains CarritoComprasContext
+ }
+
 Domain ComercioElectronico {
- 
-Subdomain CarritoCompras {
+Subdomain GestionPedidos {
+    
+    type CORE_DOMAIN
+    
+     }
+Subdomain GestionProductos {
+    type CORE_DOMAIN
+
+
+     }
+     
+     Subdomain GestionClientes {
+    type CORE_DOMAIN
+   
+    }
+    Subdomain ProcesamientoPagos {
+    type CORE_DOMAIN
+   
+   }
+   Subdomain CarritoCompras {
     type CORE_DOMAIN
     }
+}
+
+BoundedContext GestionPedidosContext implements GestionPedidos {
+  type FEATURE
+   
+  Aggregate CarritoCompras {
+    Entity ItemCarrito {
+      aggregateRoot
+      String productoId
+      String nombreProducto
+      Double precioUnitario
+      int cantidad
+    }
+  }
+}
+
+
+BoundedContext GestionProductosContext implements GestionProductos {
+  type FEATURE
+ 
+  Aggregate CatalogoProductos {
+    Entity Producto {
+      aggregateRoot
+      String productoId
+      String nombre
+      String descripcion
+      Double precio
+      int cantidadEnInventario
+    }
+    
+    Entity DescripcionProducto {
+      String productoId
+      String descripcion
+      String imagen
+    }
+  }
+}
+
+BoundedContext GestionClientesContext implements GestionClientes {
+  type FEATURE
+  
+  Aggregate Clientes {
+    Entity Cliente {
+      aggregateRoot
+      String clienteId
+      String nombre
+      String apellido
+      String correoElectronico
+    }
+
+    Entity Direccion {
+      String direccionId
+      String calle
+      String ciudad
+      String codigoPostal
+    }
+  }
+
+ Aggregate HistorialPedidos {
+    Entity  Pedido {
+      aggregateRoot
+      String pedidoId
+      String clienteId
+      Date fechaPedido
+    }
+
+    Entity LineaPedido {
+      String productoId
+      int cantidad
+      Double precioUnitario
+    }
+  }
+}
+
+BoundedContext ProcesoPagoContext implements ProcesamientoPagos {
+  type FEATURE
+  
+  Aggregate TransaccionesPago {
+    Entity Transaccion {
+      aggregateRoot
+      String transaccionId
+      String clienteId
+      Double monto
+      Date fecha
+    }
+    
+    Entity MetodoPago {
+      String metodoPagoId
+      String nombre
+    }
+  }
+
+  Aggregate PasarelasPago {
+    Entity PasarelaPago {
+      aggregateRoot
+      String pasarelaId
+      String nombre
+    }
+
+    Entity RegistroPago {
+      String registroPagoId
+      String transaccionId
+      String pasarelaId
+      Double monto
+      String estado
+    }
+  }
 
 }
+
+
 BoundedContext CarritoComprasContext implements CarritoCompras {
   type FEATURE
   
@@ -44,7 +177,5 @@ BoundedContext CarritoComprasContext implements CarritoCompras {
       String ordenId
       String itemId
       Integer cantidad
-      Double precioUnitario
-    }
-  }
+      }
 }
