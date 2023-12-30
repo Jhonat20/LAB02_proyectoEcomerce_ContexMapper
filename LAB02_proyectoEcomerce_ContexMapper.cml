@@ -4,7 +4,7 @@ ContextMap TiendaEnLineaMapaContexto {
   contains GestionProductosContext
   contains GestionPedidosContext
   contains GestionClientesContext
-  contains ProcesoPagoContext
+  contains ProcesoPagosContext
   contains CarritoComprasContext
   contains GestionSesionesContext
   contains SeguridadContext
@@ -126,7 +126,7 @@ BoundedContext GestionClientesContext implements GestionClientes {
   }
 }
 
-BoundedContext ProcesoPagoContext implements ProcesamientoPagos {
+BoundedContext ProcesoPagosContext implements ProcesamientoPagos {
   type FEATURE
   Aggregate TransaccionesPago {
     Entity Transaccion {
