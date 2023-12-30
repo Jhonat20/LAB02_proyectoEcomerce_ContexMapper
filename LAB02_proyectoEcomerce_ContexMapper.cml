@@ -178,4 +178,6 @@ BoundedContext CarritoComprasContext implements CarritoCompras {
       String itemId
       Integer cantidad
       }
+      
+      }
 }
