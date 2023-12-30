@@ -7,6 +7,26 @@ ContextMap TiendaEnLineaMapaContexto {
 }
 
 Domain ComercioElectronico {
+Subdomain GestionPedidos {
+    
+    type CORE_DOMAIN
+    
+     }
+}
+
+BoundedContext GestionPedidosContext implements GestionPedidos {
+  type FEATURE
+   
+  Aggregate CarritoCompras {
+    Entity ItemCarrito {
+      aggregateRoot
+      String productoId
+      String nombreProducto
+      Double precioUnitario
+      int cantidad
+    }
+  }
+
   
   Subdomain GestionProductos {
     type CORE_DOMAIN
