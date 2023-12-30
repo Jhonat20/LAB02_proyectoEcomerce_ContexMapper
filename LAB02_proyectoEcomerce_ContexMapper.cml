@@ -1,4 +1,5 @@
 ContextMap TiendaEnLineaMapaContexto {
+  
 	type SYSTEM_LANDSCAPE
 	state TO_BE
 
@@ -107,6 +108,7 @@ Subdomain GestionProductos {
 }
 
 BoundedContext GestionPedidosContext implements GestionPedidos {
+  
   type FEATURE
    
   Aggregate CarritoCompras {
