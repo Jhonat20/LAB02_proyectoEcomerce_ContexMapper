@@ -37,8 +37,9 @@ ContextMap TiendaEnLineaMapaContexto {
   IntegracionRedesSocialesContext [P]<->[P] VentasContext
   AnaliticasReportingContext [P]<->[P] VentasContext
   ServicioClienteContext [P]<->[P] VentasContext
-  
- }
+  GestionSesionesContext [U, S]->[D, C] SeguridadContext
+  SeguridadContext [U, S]->[D, C] GestionSesionesContext
+  }
 
 Domain ComercioElectronico {
 
