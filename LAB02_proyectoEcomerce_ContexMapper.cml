@@ -38,6 +38,7 @@ ContextMap TiendaEnLineaMapaContexto {
   ServicioClienteContext [P]<->[P] VentasContext
   GestionSesionesContext [U, S]->[D, C] SeguridadContext
   SeguridadContext [U, S]->[D, C] GestionSesionesContext
+  CarritoComprasContext [P]<->[P] VentasContext
   }
 
 Domain ComercioElectronico {
