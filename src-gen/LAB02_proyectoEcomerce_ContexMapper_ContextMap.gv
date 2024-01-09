@@ -1,19 +1,19 @@
 digraph "ContextMapGraph" {
 graph ["imagepath"="/tmp/GraphvizJava"]
-"AnaliticasReportingContext" ["margin"="0.3","orientation"="15","shape"="egg","fontsize"="16","style"="bold","label"="AnaliticasReportingContext\n","fontname"="sans-serif"]
-"VentasContext" ["margin"="0.3","orientation"="57","shape"="egg","fontsize"="16","style"="bold","label"="VentasContext\n","fontname"="sans-serif"]
-"AutenticacionAutorizacionContext" ["margin"="0.3","orientation"="44","shape"="egg","fontsize"="16","style"="bold","label"="AutenticacionAutorizacionContext\n","fontname"="sans-serif"]
-"CarritoComprasContext" ["margin"="0.3","orientation"="51","shape"="egg","fontsize"="16","style"="bold","label"="CarritoComprasContext\n","fontname"="sans-serif"]
-"GestionProductosContext" ["margin"="0.3","orientation"="178","shape"="egg","fontsize"="16","style"="bold","label"="GestionProductosContext\n","fontname"="sans-serif"]
-"GestionDevolucionesContext" ["margin"="0.3","orientation"="345","shape"="egg","fontsize"="16","style"="bold","label"="GestionDevolucionesContext\n","fontname"="sans-serif"]
-"GestionPedidosContext" ["margin"="0.3","orientation"="192","shape"="egg","fontsize"="16","style"="bold","label"="GestionPedidosContext\n","fontname"="sans-serif"]
-"GestionClientesContext" ["margin"="0.3","orientation"="251","shape"="egg","fontsize"="16","style"="bold","label"="GestionClientesContext\n","fontname"="sans-serif"]
-"GestionSesionesContext" ["margin"="0.3","orientation"="184","shape"="egg","fontsize"="16","style"="bold","label"="GestionSesionesContext\n","fontname"="sans-serif"]
-"SeguridadContext" ["margin"="0.3","orientation"="184","shape"="egg","fontsize"="16","style"="bold","label"="SeguridadContext\n","fontname"="sans-serif"]
-"IntegracionRedesSocialesContext" ["margin"="0.3","orientation"="333","shape"="egg","fontsize"="16","style"="bold","label"="IntegracionRedesSocialesContext\n","fontname"="sans-serif"]
-"NotificacionesComunicacionesContext" ["margin"="0.3","orientation"="131","shape"="egg","fontsize"="16","style"="bold","label"="NotificacionesComunicacionesContext\n","fontname"="sans-serif"]
-"ProcesoPagosContext" ["margin"="0.3","orientation"="167","shape"="egg","fontsize"="16","style"="bold","label"="ProcesoPagosContext\n","fontname"="sans-serif"]
-"ServicioClienteContext" ["margin"="0.3","orientation"="206","shape"="egg","fontsize"="16","style"="bold","label"="ServicioClienteContext\n","fontname"="sans-serif"]
+"AnaliticasReportingContext" ["margin"="0.3","orientation"="70","shape"="egg","fontsize"="16","style"="bold","label"="AnaliticasReportingContext\n","fontname"="sans-serif"]
+"VentasContext" ["margin"="0.3","orientation"="142","shape"="egg","fontsize"="16","style"="bold","label"="VentasContext\n","fontname"="sans-serif"]
+"AutenticacionAutorizacionContext" ["margin"="0.3","orientation"="274","shape"="egg","fontsize"="16","style"="bold","label"="AutenticacionAutorizacionContext\n","fontname"="sans-serif"]
+"CarritoComprasContext" ["margin"="0.3","orientation"="65","shape"="egg","fontsize"="16","style"="bold","label"="CarritoComprasContext\n","fontname"="sans-serif"]
+"GestionProductosContext" ["margin"="0.3","orientation"="29","shape"="egg","fontsize"="16","style"="bold","label"="GestionProductosContext\n","fontname"="sans-serif"]
+"GestionDevolucionesContext" ["margin"="0.3","orientation"="94","shape"="egg","fontsize"="16","style"="bold","label"="GestionDevolucionesContext\n","fontname"="sans-serif"]
+"GestionPedidosContext" ["margin"="0.3","orientation"="313","shape"="egg","fontsize"="16","style"="bold","label"="GestionPedidosContext\n","fontname"="sans-serif"]
+"GestionClientesContext" ["margin"="0.3","orientation"="98","shape"="egg","fontsize"="16","style"="bold","label"="GestionClientesContext\n","fontname"="sans-serif"]
+"GestionSesionesContext" ["margin"="0.3","orientation"="345","shape"="egg","fontsize"="16","style"="bold","label"="GestionSesionesContext\n","fontname"="sans-serif"]
+"SeguridadContext" ["margin"="0.3","orientation"="119","shape"="egg","fontsize"="16","style"="bold","label"="SeguridadContext\n","fontname"="sans-serif"]
+"IntegracionRedesSocialesContext" ["margin"="0.3","orientation"="290","shape"="egg","fontsize"="16","style"="bold","label"="IntegracionRedesSocialesContext\n","fontname"="sans-serif"]
+"NotificacionesComunicacionesContext" ["margin"="0.3","orientation"="130","shape"="egg","fontsize"="16","style"="bold","label"="NotificacionesComunicacionesContext\n","fontname"="sans-serif"]
+"ProcesoPagosContext" ["margin"="0.3","orientation"="217","shape"="egg","fontsize"="16","style"="bold","label"="ProcesoPagosContext\n","fontname"="sans-serif"]
+"ServicioClienteContext" ["margin"="0.3","orientation"="69","shape"="egg","fontsize"="16","style"="bold","label"="ServicioClienteContext\n","fontname"="sans-serif"]
 "AnaliticasReportingContext" -> "VentasContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
 "AutenticacionAutorizacionContext" -> "CarritoComprasContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">D</td></tr>
@@ -30,6 +30,7 @@ graph ["imagepath"="/tmp/GraphvizJava"]
 </table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">U</td></tr>
 </table>>,"style"="bold","label"="Customer/Supplier","dir"="none","fontname"="sans-serif"]
+"CarritoComprasContext" -> "VentasContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
 "GestionProductosContext" -> "CarritoComprasContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
 <tr><td bgcolor="white">D</td></tr>
 </table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
