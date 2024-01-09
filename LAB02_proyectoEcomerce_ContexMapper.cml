@@ -39,7 +39,7 @@ ContextMap TiendaEnLineaMapaContexto {
   GestionSesionesContext [U, S]->[D, C] SeguridadContext
   SeguridadContext [U, S]->[D, C] GestionSesionesContext
   CarritoComprasContext [P]<->[P] VentasContext
-  GestionSesionesContext [ U , S ]->[ D , C ] CarritoComprasContext
+  GestionSesionesContext [ U , S ]->[ D , C ] AutenticacionAutorizacionContext
   }
 
 Domain ComercioElectronico {
