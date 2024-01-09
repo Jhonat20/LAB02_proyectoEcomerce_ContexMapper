@@ -27,13 +27,12 @@ ContextMap TiendaEnLineaMapaContexto {
   GestionPedidosContext [ U , S ]->[ D , C ] GestionDevolucionesContext // dependencia customers
   GestionDevolucionesContext [ D , CF ]<-[ U , OHS , PL ] GestionProductosContext //conformis
   GestionDevolucionesContext [ U , S ]->[ D , C ] GestionPedidosContext
-  GestionClientesContext  [SK]<->[SK] GestionProductosContext
   GestionClientesContext  [ U , S ]->[ D , C ] CarritoComprasContext
   ProcesoPagosContext  [ U , S ]->[ D , C ] GestionPedidosContext
   CarritoComprasContext [ U , S ]->[ D , C ] GestionProductosContext
   CarritoComprasContext [ U , S ]->[ D , C ] GestionClientesContext
   AutenticacionAutorizacionContext [ U , S ]->[ D , C ] CarritoComprasContext
-  NotificacionesComunicacionesContext [P]<->[P] VentasContext
+  NotificacionesComunicacionesContext [P]<->[P] VentasContext //pate
   IntegracionRedesSocialesContext [P]<->[P] VentasContext
   AnaliticasReportingContext [P]<->[P] VentasContext
   ServicioClienteContext [P]<->[P] VentasContext
